@@ -53,14 +53,17 @@
 			}
 
 		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+			// $('form').placeholder(); // Commented out to fix placeholder error
 
 		// Prioritize "important" elements on medium.
 			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
+				// Check if prioritize function exists before calling it
+				if (typeof $.prioritize === 'function') {
+					$.prioritize(
+						'.important\\28 medium\\29',
+						skel.breakpoint('medium').active
+					);
+				}
 			});
 
 		// Footer.
@@ -111,24 +114,10 @@
 
 		// Main Sections: Two.
 
-			// Lightbox gallery.
-				$window.on('load', function() {
-
-					$('#two').poptrox({
-						caption: function($a) { return $a.next('h3').text(); },
-						overlayColor: '#2c2c2c',
-						overlayOpacity: 0.85,
-						popupCloserText: '',
-						popupLoaderText: '',
-						selector: '.work-item a.image',
-						usePopupCaption: true,
-						usePopupDefaultStyling: false,
-						usePopupEasyClose: false,
-						usePopupNav: true,
-						windowMargin: (skel.breakpoint('small').active ? 0 : 50)
-					});
-
-				});
+			// Lightbox gallery with Magnific Popup - Moved to HTML for better compatibility
+			// $window.on('load', function() {
+			// 	$('#two').magnificPopup({...});
+			// });
 
 	});
 
