@@ -3190,25 +3190,28 @@
 		top: 50% !important;
 		left: 50% !important;
 		transform: translate(-50%, -50%) !important;
-		font-size: 3em !important;
-		color: white !important;
-		text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-		opacity: 0.8 !important;
+		width: 64px !important;
+		height: 64px !important;
+		line-height: 64px !important;
+		text-align: center !important;
+		font-size: 28px !important;
+		color: #ffffff !important;
+		background: rgba(0, 0, 0, 0.6) !important;
+		border-radius: 50% !important;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.35) !important;
+		opacity: 0.9 !important;
 		pointer-events: none !important;
-		
-		/* Reset the default "View" button styles */
+		z-index: 2 !important;
+		/* Reset some default styles from .image.thumb */
 		border: none !important;
-		border-radius: 0 !important;
 		padding: 0 !important;
 		margin: 0 !important;
-		line-height: 1 !important;
 		white-space: nowrap !important;
-		background: none !important;
 	}
 	
 	.video-link:hover:after {
 		opacity: 1 !important;
-		transform: translate(-50%, -50%) scale(1.1) !important;
+		transform: translate(-50%, -50%) scale(1.06) !important;
 	}
 	
 	/* Hide the default "View" button for video links */
